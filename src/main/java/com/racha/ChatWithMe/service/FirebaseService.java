@@ -16,8 +16,8 @@ import com.google.firebase.FirebaseOptions;
 @Service
 public class FirebaseService {
 
-    @Value("${firebase.service-account-file-path}")
-    private String serviceAccountFilePath;
+    // @Value("${firebase.service-account-file-path}")
+    private String serviceAccountFilePath = "src/main/resources/static/key/chatwithme-033-firebase-adminsdk-stxjp-4933c87581.json";
 
     @Value("${firebase.database.url}")
     private String databaseUrl;

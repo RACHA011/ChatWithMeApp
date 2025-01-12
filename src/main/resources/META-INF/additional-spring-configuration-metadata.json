@@ -8,5 +8,10 @@
     "name": "firebase.service-account-file-path",
     "type": "java.lang.String",
     "description": "A description for 'firebase.service-account-file-path'"
+  },
+  {
+    "name": "firebase.serviceaccountfilepath",
+    "type": "java.lang.String",
+    "description": "A description for 'firebase.serviceaccountfilepath'"
   }
 ]}
