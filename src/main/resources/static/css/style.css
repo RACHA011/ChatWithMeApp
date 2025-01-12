@@ -1,0 +1,246 @@
+/* Universal Box Sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+body {
+    font-weight: 400;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Form Elements */
+.form-control {
+    width: 100%;
+    min-height: 38px;
+    font-size: 15px;
+    border: 1px solid #c8c8c8;
+    padding: 8px 10px;
+    border-radius: 4px;
+    outline: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 1.7em;
+}
+
+/* Links */
+a {
+    color: #6db33f;
+    text-decoration: none;
+}
+
+/* Buttons */
+button {
+    font-size: 14px;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+button.default {
+    background-color: #e8e8e8;
+    color: #333;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+button.primary, button.accent {
+    background-color: #6db33f;
+    color: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* Username Page */
+#username-page {
+    text-align: center;
+}
+
+.username-page-container {
+    background: #fff;
+    box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    padding: 35px 55px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.username-page-container .username-submit {
+    margin-top: 10px;
+}
+
+/* Chat Page */
+#chat-page {
+    height: 100%;
+    position: relative;
+}
+
+.chat-container {
+    max-width: 700px;
+    margin: 30px auto;
+    background-color: #fff;
+    box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
+    height: calc(100% - 60px);
+    max-height: 600px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#chat-page ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 20px;
+    overflow-y: auto;
+    height: calc(100% - 150px);
+    background-color: #fff;
+}
+
+#chat-page ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+#chat-page ul li p {
+    margin: 0;
+}
+
+#chat-page .event-message {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+}
+
+#chat-page .chat-message {
+    position: relative;
+    padding-left: 68px;
+}
+
+#chat-page .chat-message i {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    left: 10px;
+    background-color: #6db33f;
+    color: #fff;
+    text-align: center;
+    line-height: 42px;
+    border-radius: 50%;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+#chat-page .chat-message span {
+    font-weight: 600;
+    color: #333;
+}
+
+#chat-page .chat-message p {
+    color: #43464b;
+}
+
+#messageForm {
+    padding: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+#messageForm .input-group input {
+    flex: 1;
+}
+
+#messageForm .input-group button {
+    width: 80px;
+    height: 38px;
+}
+
+.chat-header {
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid #ececec;
+}
+
+.chat-header h2 {
+    margin: 0;
+    font-weight: 500;
+}
+
+.connecting {
+    text-align: center;
+    color: #777;
+    position: absolute;
+    top: 65px;
+    width: 100%;
+}
+
+/* Media Queries */
+@media screen and (max-width: 730px) {
+    .chat-container {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .chat-container {
+        height: calc(100% - 30px);
+    }
+
+    .username-page-container {
+        margin: 0 15px;
+        padding: 25px;
+    }
+
+    #chat-page ul {
+        height: calc(100% - 120px);
+    }
+
+    #messageForm .input-group button {
+        width: 65px;
+    }
+
+    .chat-header {
+        padding: 10px;
+    }
+
+    .chat-header h2 {
+        font-size: 1.1em;
+    }
+
+    .connecting {
+        top: 60px;
+    }
+}
