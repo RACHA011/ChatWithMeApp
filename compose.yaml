@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   server:
     build:
@@ -7,7 +5,7 @@ services:
     ports:
       - "8080:8080" # Expose port 8080
     environment:
-      FIREBASE_SERVICE_ACCOUNT_FILE_PATH: /app/config/key/chatwithme-033-firebase-adminsdk-stxjp-4933c87581.json
+      FIREBASE_SERVICE_ACCOUNT_FILE_PATH: /app/config/chatwithme-033-firebase-adminsdk-stxjp-4933c87581.json
       FIREBASE_DATABASE_URL: https://chatwithme-033-default-rtdb.firebaseio.com
     volumes:
-      - ./config:/app/config # Mount the local config directory for Firebase credentials  # Mount the local config directory for Firebase credentials
+      - ./config:/app/config # Mount the local config directory for Firebase credentials
