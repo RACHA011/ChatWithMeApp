@@ -1,13 +1,14 @@
 package com.racha.ChatWithMe.service;
 
-import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 
 import javax.annotation.PostConstruct;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ResourceUtils;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
@@ -16,6 +17,8 @@ import com.google.firebase.FirebaseOptions;
 @Service
 public class FirebaseService {
 
+    private static final Logger logger = LoggerFactory.getLogger(FirebaseService.class);
+
     @Value("${firebase.service-account-file-path}")
     private String serviceAccountFilePath;
 
@@ -23,10 +26,8 @@ public class FirebaseService {
     private String databaseUrl;
 
     @PostConstruct
-    public void initializeFirebase() throws Exception {
-        // Load the service account key from the specified path
-        File file = ResourceUtils.getFile(serviceAccountFilePath);
-        try (FileInputStream serviceAccount = new FileInputStream(file)) {
+    public void initializeFirebase() {
+        try (FileInputStream serviceAccount = new FileInputStream(serviceAccountFilePath)) {
             FirebaseOptions options = FirebaseOptions.builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                     .setDatabaseUrl(databaseUrl)
@@ -34,10 +35,13 @@ public class FirebaseService {
 
             if (FirebaseApp.getApps().isEmpty()) {
                 FirebaseApp.initializeApp(options);
-                System.out.println("Firebase successfully initialized");
+                logger.info("Firebase successfully initialized");
             } else {
-                System.out.println("Firebase app already initialized");
+                logger.info("Firebase app already initialized");
             }
+        } catch (IOException e) {
+            logger.error("Failed to initialize Firebase: " + e.getMessage(), e);
+            throw new RuntimeException("Failed to initialize Firebase", e);
         }
     }
 }
