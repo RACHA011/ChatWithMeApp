@@ -10,7 +10,7 @@
 // // also add change-password , reset-password
 
 // @Controller
-// @CrossOrigin(origins = "*", maxAge = 3600, allowedHeaders = "*")
+// @CrossOrigin(origins = {"http://localhost:3000", "*"}, maxAge = 3600, allowedHeaders = "*")
 // @Tag(name = "Home Controller", description = "Controller for Home management")
 // public class HomeController {
 //     @GetMapping("/")
