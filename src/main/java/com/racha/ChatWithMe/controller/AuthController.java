@@ -51,7 +51,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = {"http://localhost:3000", "*"}, maxAge = 3600, allowedHeaders = "Authorization, Content-Type")
+@CrossOrigin(origins = "*", maxAge = 3600, allowedHeaders = "Authorization, Content-Type")
 @Tag(name = "Auth Controller", description = "Controller for Account management")
 @Slf4j
 public class AuthController {
