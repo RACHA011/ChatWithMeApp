@@ -12,7 +12,7 @@ import io.swagger.v3.oas.annotations.info.Info;
         title = "ChatWhithMe Api",
         version = "Versions 1.0",
         contact = @Contact(
-            name = "rachadev", email = "rachadev032@gmail.com", url="/"
+            name = "rachadev", email = "rachadev032@gmail.com", url="https://racha-portfolio.onrender.com"
         ),
         description = "this is an api for the ChatWhithMe application"
     )
