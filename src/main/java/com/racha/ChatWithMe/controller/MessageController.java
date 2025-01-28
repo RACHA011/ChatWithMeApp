@@ -60,7 +60,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/chat")
-@CrossOrigin(origins = {"http://localhost:3000", "*"}, maxAge = 3600, allowedHeaders = "Authorization, Content-Type")
+@CrossOrigin(origins = "*", maxAge = 3600, allowedHeaders = "Authorization, Content-Type")
 @Tag(name = "Chat Controller", description = "Controller for Chat management")
 @Slf4j
 public class MessageController {
